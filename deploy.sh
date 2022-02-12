@@ -2,7 +2,10 @@
 
 set -e # abort on error
 
-pnpm build
+# Build app
+npm run build
+
+# Deploy app
 cd dist
 echo 'www.keye.dev' > CNAME
 git init
