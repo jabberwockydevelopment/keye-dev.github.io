@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+# Program options
 set -e # abort on error
 
 # Build app
