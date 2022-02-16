@@ -4,7 +4,7 @@
 set -e # abort on error
 
 # Build app
-npm run build
+pnpm build
 
 # Deploy app
 cd dist
