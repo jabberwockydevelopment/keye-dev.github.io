@@ -16,7 +16,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix src",
-    "format": "prettier . --write",
+    "format": "prettier --write .",
     "build": "vue-tsc --noEmit && vite build",
     "deploy": "cp CNAME dist/CNAME && scripts/deploy.sh",
     "dev": "vite",
@@ -47,11 +47,14 @@
     "*": [
       "prettier --write --ignore-unknown"
     ],
-    "packages/*/{src,types}/**/*.ts": [
-      "eslint --ext .ts"
+    "packages/*/{src,types}/**/{*.js,*.ts}": [
+      "eslint --ext .js,.ts"
     ],
-    "packages/**/*.d.ts": [
-      "eslint --ext .ts"
+    "packages/**/{*.d.js,*.d.ts}": [
+      "eslint --ext .js,.ts"
+    ],
+    "src": [
+      "eslint --ext .js,.ts,.vue --ignore-path .gitignore"
     ]
   },
   "packageManager": "pnpm@6.31.0"
